@@ -355,7 +355,7 @@ func (s *MediaService) GetVideoEncoderConfigurationOptions(profileToken, configu
 }
 
 // SetVideoEncoderConfiguration return the VideoEncoderConfiguration if the configuration token is known
-func (s *MediaService) SetVideoEncoderConfiguration(configuration tt.VideoEncoderConfiguration) (res trt.GetVideoEncoderConfigurationOptionsResponse, err error) {
+func (s *MediaService) SetVideoEncoderConfiguration(configuration tt.VideoEncoderConfiguration) (res trt.SetVideoEncoderConfigurationResponse, err error) {
 	err = s.Client.Call(trt.SetVideoEncoderConfiguration{
 		Configuration:    configuration,
 		ForcePersistence: true,
