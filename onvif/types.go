@@ -4,7 +4,7 @@ import (
 	"net"
 	"time"
 
-	"github.com/faceterteam/onvif4go/xsd"
+	"github.com/zhuangxi/onvif4go/xsd"
 )
 
 type ContentType string // minLength value="3"

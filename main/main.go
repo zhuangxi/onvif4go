@@ -5,8 +5,8 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/faceterteam/onvif4go"
-	tev "github.com/faceterteam/onvif4go/events"
+	"github.com/zhuangxi/onvif4go"
+	tev "github.com/zhuangxi/onvif4go/events"
 )
 
 func main() {

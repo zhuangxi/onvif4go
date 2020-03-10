@@ -1,9 +1,9 @@
 package onvif4go
 
 import (
-	tds "github.com/faceterteam/onvif4go/device"
-	tt "github.com/faceterteam/onvif4go/onvif"
-	"github.com/faceterteam/onvif4go/xsd"
+	tds "github.com/zhuangxi/onvif4go/device"
+	tt "github.com/zhuangxi/onvif4go/onvif"
+	"github.com/zhuangxi/onvif4go/xsd"
 )
 
 type DeviceService struct {
@@ -293,7 +293,7 @@ without creating any user.
 ONVIF compliant devices are recommended to support password length of at least 28 bytes,
 as clients may follow the password derivation mechanism which results in 'password
 equivalent' of length 28 bytes, as described in section 3.1.2 of the ONVIF security white paper.
- */
+*/
 func (s *DeviceService) CreateUser(users ...tt.User) (err error) {
 	var res tds.CreateUsersResponse
 	err = s.Client.Call(tds.CreateUsers{
@@ -409,9 +409,9 @@ func (s *DeviceService) SetDNS(fromDHCP bool, searchDomain []string, ipAddresses
 	}
 
 	err = s.Client.Call(tds.SetDNS{
-		FromDHCP: fromDHCP,
+		FromDHCP:     fromDHCP,
 		SearchDomain: tokens,
-		DNSManual: ipAddresses,
+		DNSManual:    ipAddresses,
 	}, &res)
 	return
 }
@@ -489,7 +489,6 @@ func (s *DeviceService) GetAccessPolicy() (res tds.GetAccessPolicyResponse, err 
 	// todo convert binary data to []byte?
 	return
 }
-
 
 /*
 <wsdl:operation name="CreateCertificate">

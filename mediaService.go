@@ -1,8 +1,8 @@
 package onvif4go
 
 import (
-	trt "github.com/faceterteam/onvif4go/media"
-	tt "github.com/faceterteam/onvif4go/onvif"
+	trt "github.com/zhuangxi/onvif4go/media"
+	tt "github.com/zhuangxi/onvif4go/onvif"
 )
 
 type MediaService struct {
@@ -340,6 +340,15 @@ func (s *MediaService) GetVideoSourceConfiguration(configurationToken string) (r
 // GetVideoEncoderConfiguration return the VideoEncoderConfiguration if the configuration token is known
 func (s *MediaService) GetVideoEncoderConfiguration(configurationToken string) (res trt.GetVideoEncoderConfigurationResponse, err error) {
 	err = s.Client.Call(trt.GetVideoEncoderConfiguration{
+		ConfigurationToken: tt.ReferenceToken(configurationToken),
+	}, &res)
+	return
+}
+
+// GetVideoEncoderConfigurationOptions return the VideoEncoderConfiguration if the configuration token is known
+func (s *MediaService) GetVideoEncoderConfigurationOptions(profileToken, configurationToken string) (res trt.GetVideoEncoderConfigurationOptionsResponse, err error) {
+	err = s.Client.Call(trt.GetVideoEncoderConfigurationOptions{
+		ProfileToken:       tt.ReferenceToken(profileToken),
 		ConfigurationToken: tt.ReferenceToken(configurationToken),
 	}, &res)
 	return

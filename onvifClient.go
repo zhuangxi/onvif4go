@@ -3,7 +3,7 @@ package onvif4go
 import (
 	"time"
 
-	"github.com/faceterteam/onvif4go/soap"
+	"github.com/zhuangxi/onvif4go/soap"
 )
 
 type onvifCaller interface {

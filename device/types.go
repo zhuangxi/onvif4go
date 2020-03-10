@@ -3,8 +3,8 @@ package device
 import (
 	"time"
 
-	"github.com/faceterteam/onvif4go/onvif"
-	"github.com/faceterteam/onvif4go/xsd"
+	"github.com/zhuangxi/onvif4go/onvif"
+	"github.com/zhuangxi/onvif4go/xsd"
 )
 
 type Service struct {

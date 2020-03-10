@@ -3,7 +3,7 @@ package onvif
 import (
 	"encoding/xml"
 
-	"github.com/faceterteam/onvif4go/xsd"
+	"github.com/zhuangxi/onvif4go/xsd"
 )
 
 type ItemList struct {

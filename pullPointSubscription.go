@@ -3,8 +3,8 @@ package onvif4go
 import (
 	"time"
 
-	tev "github.com/faceterteam/onvif4go/events"
-	"github.com/faceterteam/onvif4go/xsd"
+	tev "github.com/zhuangxi/onvif4go/events"
+	"github.com/zhuangxi/onvif4go/xsd"
 )
 
 type PullPointSubscription struct {
