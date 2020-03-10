@@ -354,6 +354,15 @@ func (s *MediaService) GetVideoEncoderConfigurationOptions(profileToken, configu
 	return
 }
 
+// SetVideoEncoderConfiguration return the VideoEncoderConfiguration if the configuration token is known
+func (s *MediaService) SetVideoEncoderConfiguration(configuration tt.VideoEncoderConfiguration) (res trt.GetVideoEncoderConfigurationOptionsResponse, err error) {
+	err = s.Client.Call(trt.SetVideoEncoderConfiguration{
+		Configuration:    configuration,
+		ForcePersistence: true,
+	}, &res)
+	return
+}
+
 // GetAudioSourceConfiguration return the AudioSourceConfiguration if the configuration token is known
 func (s *MediaService) GetAudioSourceConfiguration(configurationToken string) (res trt.GetAudioSourceConfigurationResponse, err error) {
 	err = s.Client.Call(trt.GetAudioSourceConfiguration{
